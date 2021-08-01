@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+.venv
+.env
+__pycache__/
+.mypy_cache/
+*.py[cod]
+*$py.class

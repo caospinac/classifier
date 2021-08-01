@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+
+  jupyter:
+    image: jupyter/minimal-notebook:python-3.9.5
+    working_dir: /notebooks
+    volumes:
+      - ./notebooks:/notebooks
+    ports:
+      - 8888:8888
