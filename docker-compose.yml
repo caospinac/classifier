@@ -8,6 +8,7 @@ services:
     working_dir: /notebooks
     volumes:
       - ./notebooks:/notebooks
+      - ./training_data:/training_data
     ports:
       - 8888:8888
     depends_on:
