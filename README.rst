@@ -1,10 +1,23 @@
 Notebook
 --------
-docker-compose up -d
-docker-compose exec jupyter conda install nltk
-docker-compose exec jupyter python -c "import nltk; nltk.download('stopwords')"
+
+.. code-block::
+
+  docker-compose up -d
+  docker-compose exec jupyter conda install nltk elasticsearch
+  docker-compose exec jupyter python -c "import nltk; nltk.download(['stopwords', 'wordnet'])"
 
 Aplication
 ----------
-bash scripts/setup.sh
-.venv/bin/python -c "import nltk; nltk.download('stopwords')"
+
+.. code-block::
+
+  bash scripts/setup.sh
+  .venv/bin/python -c "import nltk; nltk.download('stopwords')"
+
+Services
+--------
+
+- Elasticsearch: http://localhost:9200
+- Jupyter: http://localhost:8888
+- Kibana: http://localhost:5601
