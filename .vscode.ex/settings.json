@@ -7,7 +7,7 @@
     "python.pythonPath": ".venv/bin/python",
     "editor.rulers": [80],
     "python.workspaceSymbols.exclusionPatterns": [
-        "**/site-packages/**",
+        "**/site-packages/**"
     ],
     "search.exclude": {
         "**/.venv": true

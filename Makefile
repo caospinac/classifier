@@ -19,6 +19,9 @@ install: | $(VENV)
 venv:
 	source $(VENV)/bin/activate
 
+.vscode:
+	cp -r .vscode.ex .vscode
+
 env:
 	@if [ ! -f .env ]; then \
 		cp .env.tmpl .env; \
