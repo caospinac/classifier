@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 nltk = "*"
+fastapi = "*"
+uvicorn = "*"
 
 [dev-packages]
 mypy = "*"
@@ -15,3 +17,8 @@ autopep8 = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+start = "uvicorn main:app --host 0.0.0.0 --reload"
+lint = "flake8 ."
+hint = "mypy ."
