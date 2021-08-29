@@ -12,8 +12,7 @@ Aplication
 
 .. code-block::
 
-  bash scripts/setup.sh
-  .venv/bin/python -c "import nltk; nltk.download('stopwords')"
+  make install
 
 Services
 --------

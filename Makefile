@@ -1,33 +1,32 @@
-# Makefile
+.ONESHELL:
+.PHONY: install clean clean-all shell
+
 SHELL := /bin/bash
-VENV = .venv
+venv_dir = .venv
+env_file = .env
 
 
-all: env install
+install: $(env_file) $(venv_dir)
 
-install: | $(VENV)
-	@if [ ! -d $(VENV) ]; then \
-		cp .env.tmpl .env; \
-		echo ".env file created"; \
-		python3 -m pip install -U --upgrade pip; \
-		python3 -m pip install -U pipenv; \
-		PIPENV_VENV_IN_PROJECT=1 python3 -m pipenv install -d; \
-		$(VENV)/bin/pip install --upgrade pip; \
-		$(VENV)/bin/pip install pipenv; \
-	fi
+$(venv_dir):
+	python3 -m pip install -U --upgrade pip
+	python3 -m pip install -U pipenv
+	PIPENV_VENV_IN_PROJECT=1 python3 -m pipenv install -d
+	$(venv_dir)/bin/pip install --upgrade pip
+	$(venv_dir)/bin/pip install pipenv
+	$(venv_dir)/bin/python -c "import nltk; nltk.download(['stopwords', 'wordnet'])"
 
-venv:
-	source $(VENV)/bin/activate
+$(env_file):
+	cp $(env_file).tmpl $(env_file)
+
+clean-all: clean
+	rm -rf $(venv_dir)
+
+clean:
+	find -iname "*.py[cod]" -delete
+
+shell:
+	source $(venv_dir)/bin/activate
 
 .vscode:
 	cp -r .vscode.ex .vscode
-
-env:
-	@if [ ! -f .env ]; then \
-		cp .env.tmpl .env; \
-		echo ".env file created"; \
-	fi
-
-clean:
-	rm -rf $(VENV)
-	find -iname "*.py[cod]" -delete
