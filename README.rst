@@ -34,3 +34,13 @@ Endpoints
 
 - API health check: http://localhost:8000/ping
 - API docs: http://localhost:8000/redoc
+
+
+Training
+--------
+
+Pull datasets
+
+.. code-block::
+
+  make training-data

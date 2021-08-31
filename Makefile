@@ -4,6 +4,7 @@
 SHELL := /bin/bash
 venv_dir = .venv
 env_file = .env
+training_data_dir = training_data
 
 
 dev: $(env_file) $(venv_dir)
@@ -32,3 +33,10 @@ run:
 	clear
 	@source $(venv_dir)/bin/activate
 	@pipenv run start
+
+bucket_url = https://firebasestorage.googleapis.com/v0/b/autoclassifier.appspot.com/o
+
+training-data:
+	@for file in np_ds_01.csv np_ds_02.csv npn_ds_03.csv; do
+	 	wget $(bucket_url)/datasets%2F$$file?alt=media -O $(training_data_dir)/$$file
+	done
