@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from .nbc import router as nbcRouter
+from .classifier import router as nbcRouter
 
 
 router = APIRouter()

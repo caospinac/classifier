@@ -1,13 +1,18 @@
-from typing import Union
+from app.lib.const import ES_HOST
+from typing import Any, Iterable, Optional
 from elasticsearch import Elasticsearch
 
-es = Elasticsearch(hosts='es')
+es = Elasticsearch(hosts=ES_HOST)
 
 
-def search(index: str, body: dict, one: bool = False) -> Union[list, None]:
+def search(index: str, body: dict) -> Iterable:
     res = es.search(index=index, body=body)
 
-    if one:
-        return next((x for x in res['hits']), None)
+    for hit in res['hits']['hits']:
+        yield hit['_source']
 
-    return res['hits']
+
+def search_one(index: str, body: dict) -> Optional[Any]:
+    hits = search(index=index, body=body)
+
+    return next((x for x in hits), None)
