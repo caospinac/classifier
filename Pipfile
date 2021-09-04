@@ -21,6 +21,7 @@ autopep8 = "*"
 python_version = "3.9"
 
 [scripts]
-start = "uvicorn main:app --host 0.0.0.0 --reload"
+start = "python main.py"
+start-dev = "uvicorn main:app --host 0.0.0.0 --reload"
 lint = "flake8 ."
 hint = "mypy ."

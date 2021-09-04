@@ -40,3 +40,16 @@ training-data:
 	@for file in np_ds_01.csv np_ds_02.csv npn_ds_03.csv; do
 	 	wget $(bucket_url)/datasets%2F$$file?alt=media -O $(training_data_dir)/$$file
 	done
+
+run-services-install: run-services
+	@docker-compose -f docker-compose.services.yml exec jupyter conda install nltk elasticsearch
+	@docker-compose -f docker-compose.services.yml exec jupyter python -c "import nltk; nltk.download(['stopwords', 'wordnet'])"
+
+run-services:
+	docker-compose -f docker-compose.services.yml up -d
+
+build:
+	@docker-compose build
+
+run-docker:
+	@docker-compose up -d

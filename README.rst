@@ -1,11 +1,17 @@
-Notebook
---------
+Notebook & services
+###################
 
-.. code-block::
+First time
 
-  docker-compose up -d
-  docker-compose exec jupyter conda install nltk elasticsearch
-  docker-compose exec jupyter python -c "import nltk; nltk.download(['stopwords', 'wordnet'])"
+.. code-block:: bash
+
+  make run-services-install
+
+Thenceforth:
+
+.. code-block:: bash
+
+  make run-services
 
 Services
 --------
@@ -14,20 +20,30 @@ Services
 - Jupyter: http://localhost:8888
 - Kibana: http://localhost:5601
 
-Aplication
-----------
 
-.. code-block::
+Aplication
+##########
+
+.. code-block:: bash
 
   make dev
 
 Running application
-...................
+-------------------
 
-.. code-block::
+.. code-block:: bash
 
-  make shell
-  pipenv run start
+  make run start
+
+For development: :code:`make run start-dev`
+
+
+Building
+--------
+
+.. code-block:: bash
+
+  make build
 
 Endpoints
 .........
@@ -41,6 +57,6 @@ Training
 
 Pull datasets
 
-.. code-block::
+.. code-block:: bash
 
   make training-data
