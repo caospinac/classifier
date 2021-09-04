@@ -5,9 +5,9 @@ from nltk.corpus import stopwords
 
 
 noisywords = set(
-    stopwords.words("english") +
+    stopwords.words('english') +
     list(punctuation) +
-    ["__mention__", "__link__"]
+    ['__mention__', '__link__'],
 )
 
 

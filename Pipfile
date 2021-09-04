@@ -8,6 +8,7 @@ nltk = "*"
 fastapi = "*"
 uvicorn = "*"
 elasticsearch = "*"
+flake8-quotes = "*"
 
 [dev-packages]
 mypy = "*"

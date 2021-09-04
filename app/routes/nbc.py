@@ -7,4 +7,4 @@ router = Router()
 @router.post('/nbc')
 def login() -> str:
 
-    return "Hi there!"
+    return 'Hi there!'

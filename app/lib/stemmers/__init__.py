@@ -9,7 +9,7 @@ from .porter import PorterStemmer
 def create(name: str) -> Stemmer:
     if name == 'porter':
         return PorterStemmer()
-    elif name == 'lancaster':
+    elif name == "lancaster":
         return LancasterStemmer()
     elif name == 'snowball':
         return SnowballStemmer()

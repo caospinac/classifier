@@ -6,7 +6,8 @@ exclude =
   __pycache__,
   __init__.py,
   .mypy_cache,
-  .pytest_cache
+  .pytest_cache,
+  *.py[cod],
 
 inline-quotes = single
 multiline-quotes = single
