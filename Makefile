@@ -45,6 +45,9 @@ run-services-install: run-services
 	@docker-compose -f docker-compose.services.yml exec jupyter conda install nltk elasticsearch
 	@docker-compose -f docker-compose.services.yml exec jupyter python -c "import nltk; nltk.download(['stopwords', 'wordnet'])"
 
+jupyter-token:
+	@docker-compose -f docker-compose.services.yml exec jupyter jupyter notebook list | grep "?token"
+
 run-services:
 	docker-compose -f docker-compose.services.yml up -d
 
