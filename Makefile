@@ -1,5 +1,5 @@
 .ONESHELL:
-.PHONY: install clean clean-all shell run
+.PHONY: install clean clean-all shell run dev
 
 SHELL := /bin/bash
 venv_dir = .venv
@@ -55,4 +55,7 @@ build:
 	@docker-compose build
 
 run-docker:
+	@docker-compose up
+
+run-docker-d:
 	@docker-compose up -d

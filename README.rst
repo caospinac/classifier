@@ -60,3 +60,20 @@ Pull datasets
 .. code-block:: bash
 
   make training-data
+
+
+Available CLI commands
+------------------
+
+* :code:`make run-services-install`: Installs and runs dep-services
+* :code:`make run-services`: Runs dependencies services
+* :code:`make training-data`: Downloads training data sets
+* :code:`make jupyter-token`: Gets Jupyter token for login
+* :code:`make build`: Build main service
+* :code:`make dev`: Install development dependencies
+* :code:`make run`: Run application (development)
+* :code:`make run-docker`: Run application
+* :code:`make run-docker-d`: Run application (detached)
+* :code:`make .vscode`: Creates default VSCode config
+* :code:`make clean`: Remove cached Python files
+* :code:`make clean-all`: Remove cached Python files and installed packages
