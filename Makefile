@@ -59,3 +59,7 @@ run-docker:
 
 run-docker-d:
 	@docker-compose up -d
+
+train:
+	@source $(venv_dir)/bin/activate
+	eval $$(cat $(env_file)) python scripts/train.py

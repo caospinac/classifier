@@ -12,3 +12,4 @@ exclude =
 inline-quotes = single
 multiline-quotes = single
 docstring-quotes = single
+ignore=E731

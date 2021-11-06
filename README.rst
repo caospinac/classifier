@@ -61,6 +61,12 @@ Pull datasets
 
   make training-data
 
+Run training process
+
+.. code-block:: bash
+
+  make train
+
 
 Available CLI commands
 ------------------
@@ -68,6 +74,7 @@ Available CLI commands
 * :code:`make run-services-install`: Installs and runs dep-services
 * :code:`make run-services`: Runs dependencies services
 * :code:`make training-data`: Downloads training data sets
+* :code:`make train`: Trains the algorithm. Indexes data onto Elasticsearch
 * :code:`make jupyter-token`: Gets Jupyter token for login
 * :code:`make build`: Build main service
 * :code:`make dev`: Install development dependencies
