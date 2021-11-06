@@ -21,39 +21,8 @@ Services
 - Kibana: http://localhost:5601
 
 
-Aplication
-##########
-
-.. code-block:: bash
-
-  make dev
-
-Running application
--------------------
-
-.. code-block:: bash
-
-  make run start
-
-For development: :code:`make run start-dev`
-
-
-Building
---------
-
-.. code-block:: bash
-
-  make build
-
-Endpoints
-.........
-
-- API health check: http://localhost:8000/ping
-- API docs: http://localhost:8000/redoc
-
-
 Training
---------
+########
 
 Pull datasets
 
@@ -68,8 +37,47 @@ Run training process
   make train
 
 
+Aplication
+##########
+
+.. code-block:: bash
+
+  make dev
+
+Running application
+-------------------
+
+.. code-block:: bash
+
+  make run
+
+Building
+--------
+
+.. code-block:: bash
+
+  make build
+
+Endpoints
+.........
+
+- API health check: http://localhost:8000/ping
+- API docs: http://localhost:8000/redoc
+
+Evaluate text:
+
+.. code-block:: bash
+
+  curl --location --request POST 'http://localhost:8000/v1/get-perception' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "input": "Text to evaluate"
+  }'
+
+
+
 Available CLI commands
-------------------
+----------------------
 
 * :code:`make run-services-install`: Installs and runs dep-services
 * :code:`make run-services`: Runs dependencies services
